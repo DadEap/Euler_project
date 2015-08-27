@@ -1,3 +1,5 @@
+mod pb_1;
+
 fn main() {
-    println!("Hello, world!");
+    pb_1::solve();
 }
