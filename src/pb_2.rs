@@ -8,7 +8,7 @@ pub fn solve() {
 
     while num < 4000000 {
         let len = vec.len();
-        num = vec.get(len-1).unwrap() + vec.get(len-2).unwrap();
+        num = vec[len-1] + vec[len-2];
         vec.push(num);
     }
 
