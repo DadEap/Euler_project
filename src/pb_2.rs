@@ -1,9 +1,5 @@
 pub fn solve() {
-    let mut vec = Vec::new();
-
-    vec.push(0);
-    vec.push(1);
-
+    let mut vec = vec!(0,1);
     let mut num = 1;
 
     while num < 4000000 {
