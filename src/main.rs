@@ -1,5 +1,5 @@
-mod pb_3;
+extern crate euler_project;
 
 fn main() {
-    pb_3::solve();
+    euler_project::problems::pb_6::solve();
 }
