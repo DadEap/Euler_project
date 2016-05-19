@@ -31,7 +31,11 @@ pub fn prime_factors(number : u64) -> Vec<u64> {
 
 
 pub fn is_prim(n : i32) -> bool {
-    is_pair(n)
+    for i in 2..n-1 {
+        // Why can't I just "{ false } ?"
+        if (n % i) == 0 { return false; }
+    }
+    true
 }
 
 fn is_pair(n : i32) -> bool {
