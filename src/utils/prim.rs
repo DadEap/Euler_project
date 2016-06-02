@@ -29,20 +29,22 @@ pub fn prime_factors(number : u64) -> Vec<u64> {
     factors
 }
 
-// TO DO
-/*
 pub fn eratosthene_prim_list(upper_bound : i32) -> Vec<i32> {
     let mut prim_vec = Vec::new();
     let mut vec : Vec<i32> = (2..upper_bound).collect();
-    for i in vec {
-        if is_prim(i) {
-            prim_vec.push(i);
-            vec.retain(|&x| x % i == 0);
+    while !vec.is_empty() {
+        let e = vec[0];
+
+        if is_prim(e) {
+            prim_vec.push(e);
+            vec.retain(|&x| x % e != 0);
+        } else {
+            vec.remove(0);
         }
     }
     prim_vec
 }
-*/
+
 
 pub fn is_prim(n : i32) -> bool {
     for i in 2..n-1 {
@@ -58,6 +60,7 @@ fn is_pair(n : i32) -> bool {
 
 fn is_square(n_u64 : u64) -> bool {
     let n = n_u64 as f64;
+    // trunc to avoid undesirable float inaccuracies behaviours
     f64::powi(f64::trunc(f64::sqrt(n)), 2) == n
 }
 
